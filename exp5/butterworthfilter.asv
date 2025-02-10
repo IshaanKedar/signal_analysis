@@ -1,0 +1,30 @@
+clc
+clear 
+close
+fp = 3500;fs = 4500;
+%lowpass
+wp = 2*pi*fp;ws = 2*pi*fs;
+[n,wn] = buttord(wp,ws,0.5,30,'s');
+[b,a] = butter(n,wn,'s');
+wa = 0:(3*ws)/511:3*ws;
+h = freqs(b,a,wa);
+
+subplot(2,2,1);
+
+plot(wa/(2*pi),20*log10(abs(h)));grid;
+title('lowpass');
+axis([0 3*fs -60 5]);
+%highpass
+[b,a] = butter(n,wn,'high','s');
+h2 = freqs(b,a,wa);
+subplot(2,2,2);
+plot(wa/(2*pi),20*log10(abs(h)));grid;
+title('high pass filter');
+axis([0 3*fs -60 5]);
+
+%bandstop
+wn = [wp,ws]
+[b,a] = butter(n,wn,'stop','s');
+h3 = freqs(b,a,wa);
+su
+
