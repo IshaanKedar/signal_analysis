@@ -1,8 +1,9 @@
 %frequency of samples in dtft
 
 w = -4*pi:8*pi/511:4*pi;
-num = input("enter the numerator");
-den = input('enter the denominator');
+num = [2 1]; den = [1 -0.6];
+% num = input("enter the numerator");
+% den = input('enter the denominator');
 
 h = freqz(num,den,w);
 

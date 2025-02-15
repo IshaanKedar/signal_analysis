@@ -1,4 +1,7 @@
 %initialize
+clc;
+clear; 
+close;
 
 N = 200;  %length of signal no of smaples in x[n]
 L = 256;  %length of dft

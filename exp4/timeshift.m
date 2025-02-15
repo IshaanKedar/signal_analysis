@@ -1,7 +1,7 @@
 %frequency of samples in dtft
 
 w = -pi:2*pi/255:pi;
-num = input("enter sequence");
+num = [1 2 3 4 5 6 7 8 9];
 D = 10;
 
 
