@@ -2,7 +2,7 @@ clc
 clear all 
 close all
 
-chirpdat = load('chirp.mat');
+chirpdat = load('train.mat');
 chirpobj = audioplayer(chirpdat.y,chirpdat.Fs);
 
 audioData = chirpdat.y;
