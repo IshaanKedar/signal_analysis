@@ -20,7 +20,7 @@ for i = 1:length(butter_orders)
     
     subplot(5, 1, i+1);
     plot(t, filtered_signal);
-    title(['Filtered ECG Signal (Butterworth Order ', num2str(butter_orders(i)), ')']);
+    title(['Filtered ECG Signal (Butterworth Order ', num2str(butter_orders(i)),' fc: ',num2str(butter_cutoffs(i)),')']);
     xlabel('Time (s)'); ylabel('Amplitude');
 end
 
@@ -40,7 +40,7 @@ for i = 1:length(cheby_orders)
     
     subplot(8, 1, i+1);
     plot(t, filtered_signal1);
-    title(['Chebyshev Type-1 Order ', num2str(cheby_orders(i))]);
+    title(['Chebyshev Type-1 Order ', num2str(cheby_orders(i)),' fc: ',num2str(cheby_cutoffs(i))]);
     xlabel('Time (s)'); ylabel('Amplitude');
     
     
@@ -61,6 +61,6 @@ for i = 1:length(cheby_orders)
     
     subplot(8, 1, i+1);
     plot(t, filtered_signal2);
-    title(['Chebyshev Type-2 Order ', num2str(cheby_orders(i))]);
+    title(['Chebyshev Type-2 Order ', num2str(cheby_orders(i)),' fc: ', num2str(cheby_cutoffs(i))]);
     xlabel('Time (s)'); ylabel('Amplitude');
 end
